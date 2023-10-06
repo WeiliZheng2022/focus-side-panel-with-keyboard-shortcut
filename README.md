@@ -5,4 +5,4 @@ This example demonstrates how to display the same side panel on every site using
 ## Running this extension
 
 1. Load this directory in Chrome as an [unpacked extension](https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#load-unpacked).
-2. Press Command+Shift+Y when the content is focused.
+2. Press Command+Shift+Y when the content(besides the side panel) is focused.
