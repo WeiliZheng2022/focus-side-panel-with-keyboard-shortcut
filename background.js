@@ -1,8 +1,14 @@
-chrome.commands.onCommand.addListener(async (command) => {
+chrome.commands.onCommand.addListener(async (command, tab) => {
   console.log(`Command "${command}" called`);
-  chrome.runtime.sendMessage({
-    type:'focusSidePanel'
-  })
-  // const [tab] = await chrome.tabs.query({active: true})
-  // chrome.sidePanel.open({tabId:tab.id});
+  if (command === "focus-side-panel") {
+    chrome.runtime.sendMessage({
+      type: 'focusSidePanel'
+    })
+  }
+  if (command === "focus-the-content") {
+    console.log('tab',tab);
+    // Actually the tab is already active, so I don't know how to make it focused.
+    await chrome.tabs.update(tab.id, { active: true });
+    await chrome.windows.update(tab.windowId, { focused: true });
+  }
 });

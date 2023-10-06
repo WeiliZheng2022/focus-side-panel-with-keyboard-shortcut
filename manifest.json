@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Global side panel",
+  "name": "Focus side panel",
   "version": "1.0",
   "description": "Sidepanel declared only in the manifest visible to all sites",
   "icons": {
@@ -14,7 +14,7 @@
   "side_panel": {
     "default_path": "sidepanel.html"
   },
-  "permissions": ["sidePanel"],
+  "permissions": ["sidePanel", "tabs"],
   "commands": {
     "focus-side-panel": {
       "suggested_key": {
@@ -22,6 +22,13 @@
         "mac": "Command+Shift+Y"
       },
       "description": "Focus side panel"
+    },
+    "focus-the-content": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Z",
+        "mac": "Command+Shift+Z"
+      },
+      "description": "Focus the content"
     }
   }
 }
